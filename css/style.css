@@ -16,7 +16,7 @@
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: black;
     color: #333;
     margin: 0;
     padding: 0;
@@ -115,14 +115,6 @@ button:hover {
     }
 }
 
-body {
-    font-family: "Kanit", Arial, sans-serif;
-    background-image: url("../img/wallpaper.avif");
-    text-shadow: 2px 2px 3px rgb(177, 177, 177);
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
 
 .tooltip {
     position: fixed !important;
@@ -220,10 +212,6 @@ h5{
     transform: translateY(-10px);
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
-}
 
 .africa-header {
     background-color: #f8f9fa;
@@ -671,13 +659,6 @@ html {
     color: #333;
 }
 
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
 
 .container {
     max-width: 90%;
