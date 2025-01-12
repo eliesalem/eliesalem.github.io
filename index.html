@@ -5,20 +5,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Elie Salem - Coding Portfolio</title>
 	<style>
+		/* Reset and basic layout */
 		body {
-			font-family: Arial, sans-serif;
+			font-family: 'Helvetica Neue', Arial, sans-serif;
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
-			background-color: #f4f4f4;
+			background-color: #ffffff;
+			color: #333;
 		}
+
+		/* Header styling */
 		.header {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			padding: 20px;
+			padding: 20px 50px;
 			background-color: #333;
 			color: white;
+		}
+		.header h2 {
+			margin: 0;
+			font-size: 1.6em;
 		}
 		.nav-buttons {
 			display: flex;
@@ -30,34 +38,58 @@
 			padding: 10px 20px;
 			border: 1px solid white;
 			border-radius: 5px;
-			transition: background-color 0.3s;
+			transition: background-color 0.3s ease-in-out;
 		}
 		.nav-buttons a:hover {
 			background-color: #555;
 		}
+
+		/* Main content layout */
 		.main-content {
-			padding: 52px;
-			text-align: center;
+			width: 70%;
+			max-width: 1200px;
+			margin: 40px auto;
+			padding: 20px;
+			text-align: right;
 		}
-		h1 {
+		.main-content h1 {
+			font-size: 2.5em;
 			margin-bottom: 20px;
+			color: #222;
 		}
+		.main-content p {
+			font-size: 1.2em;
+			line-height: 1.8;
+		}
+
+		/* Section styling */
 		.section {
-			margin: 70px 0;
-			text-align: center;
+			margin: 50px 0;
+			text-align: right;
 		}
 		.section-title {
-			font-size: 24px;
+			font-size: 1.8em;
 			color: #333;
 			margin-bottom: 20px;
 		}
-		p {
-			font-size: 18px;
+		.section p {
+			font-size: 1.1em;
 			line-height: 1.6;
+		}
+
+		/* Responsive design adjustments */
+		@media (max-width: 768px) {
+			.main-content, .section {
+				width: 90%;
+			}
+			.nav-buttons {
+				flex-direction: column;
+			}
 		}
 	</style>
 </head>
 <body>
+
 <div class="header">
 	<h2>Elie Salem - Coding Portfolio</h2>
 	<div class="nav-buttons">
@@ -73,24 +105,23 @@
 
 <div class="section">
 	<h2 class="section-title">About Me</h2>
-	<p>Grew up in Lebanon and USA</p>
-	<p>Debate champion in three states</p>
-	<p>Lived three months in the Amazon</p>
-
+	<p>Grew up in Lebanon and the USA.</p>
+	<p>Debate champion in three states.</p>
+	<p>Lived three months in the Amazon.</p>
 </div>
 
 <div class="section">
 	<h2 class="section-title">Coding</h2>
-	<p>Worked full stack at Keel Ventures</p>
-	<p>Created and marketed digital learning products for Harvard</p>
-	<p>Leading team to create email chatbot startup</p>
+	<p>Worked full stack at Keel Ventures.</p>
+	<p>Created and marketed digital learning products for Harvard.</p>
+	<p>Leading a team to create an email chatbot startup.</p>
 </div>
 
 <div class="section">
 	<h2 class="section-title">School</h2>
-	<p>Editor-in-Chief of The Harvard Lampoon, the premier college humor magazine</p>
-	<p>Wrote comedy book draft that went to final round at Back Bay Books</p>
-	<p>Wrote thesis with Harvard Philosophy Department Head</p>
+	<p>Editor-in-Chief of The Harvard Lampoon, the premier college humor magazine.</p>
+	<p>Wrote a comedy book draft that went to the final round at Back Bay Books.</p>
+	<p>Wrote my thesis with Harvard Philosophy Department Head.</p>
 </div>
 
 </body>
