@@ -5,75 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <style>
+        /* General body and layout setup */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'EB Garamond', serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #fff; /* Make the background white */
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
             display: flex;
-            justify-content: center;  /* Center content horizontally */
-            align-items: center;      /* Center content vertically */
-            min-height: 100vh;         /* Take full height of the viewport */
+            justify-content: space-between;
+            text-align: left;
+            padding: 20px 50px;
+            background-color: #333;
+            color: white;
         }
+
+        .header a {
+            text-decoration: none; /* Remove default link underline */
+            color: white; /* Ensure the link is white like the text */
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 1.4em;
+            cursor: pointer; /* Make it appear clickable */
+            text-decoration: underline; /* Keep underline style for visibility */
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #555;
+        }
+
+        /* Main content (central column) */
         .container {
-            width: 100%;               /* Allow full width but with max-width restriction */
-            max-width: 800px;          /* Set a maximum width for the sections */
+            width: 100%;
+            max-width: 800px;
             padding: 20px;
+            margin-top: 80px; /* Adjust to create space for the header */
         }
+
         .section {
             padding: 45px 20px;
-            border-bottom: 1px solid #ddd; /* Subtle line between sections */
+            border-bottom: 1px solid #ddd;
             margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            background-color: #fff;
         }
+
         .section:last-child {
-            border-bottom: none; /* Remove the bottom border for the last section */
+            border-bottom: none;
         }
-        .content {
-            padding: 20px;
-        }
+
         h2 {
             margin-bottom: 15px;
             cursor: pointer;
-            color: #007BFF;  /* Make it look like a clickable element */
+            color: #007BFF;
             font-size: 24px;
         }
+
         h2:hover {
             text-decoration: underline;
         }
+        .header h3 {
+            margin: 0;
+            font-size: 1.4em;
+            cursor: pointer; /* Make it appear clickable */
+            color: white;
+        }
+
+
         p {
             font-size: 16px;
             line-height: 1.5;
-            color: #333;  /* Darker text color for better readability */
+            color: #333;
         }
     </style>
 </head>
 <body>
+<!-- Header with navigation -->
+<div class="header">
+    <a href="index.html">
+        <h3> Elie Salem </h3>
+    </a>
+    <div class="nav-buttons">
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+    </div>
+</div>
 
 <div class="container">
-
+    <!-- Project Sections -->
     <div class="section">
         <div class="content">
             <h2 onclick="window.location.href='https://github.com/eliesalem/flight-query-app'">Flight Query</h2>
-            <p>Due to size of database, you will have to run locally. Type "python app.py" in terminal.</p>
+            <p>Parses natural language queries into structured database queries using a grammar-based parser. Due to the size of the database, you will have to run it locally. Type "python app.py" in the terminal.</p>
         </div>
     </div>
 
     <div class="section">
         <div class="content">
             <h2 onclick="window.location.href='cs109a_project_milestone_5/project.html'">2020 Election Data Analysis</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Data analysis using panda. Uses lasso, principal component analysis, and random forest to determine predictive features of a county's voting results.</p>
         </div>
     </div>
 
     <div class="section">
         <div class="content">
-            <h2 onclick="window.location.href='https://eliesalem.github.io/'">Wildlife Trading Data Analysis Website</h2>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <h2 onclick="window.location.href='https://eliesalem.github.io/'">Wildlife Trading Website</h2>
+            <p>Website includes parallax scrolling, complex matching game, and dynamic data analysis with map tools.</p>
         </div>
     </div>
-
 </div>
-
 </body>
 </html>
