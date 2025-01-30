@@ -1,166 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Elie Salem - Coding Portfolio</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Elie Salem | Coding & Writing</title>
+
+	<!-- Inter font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+			rel="stylesheet"
+	/>
+
+	<!-- Pacifico font for special elements -->
+	<link
+			href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+			rel="stylesheet"
+	/>
+
 	<style>
-		/* General body and layout setup */
-		body {
-			font-family: 'EB Garamond', serif;
+		/* RESET */
+		* {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
-			background-color: #ffffff;
-			color: #333;
 		}
 
-		/* Header */
-		/* Header */
+		/* BODY */
+		body {
+			font-family: "Inter", sans-serif;
+			background-color: #f8f9fa;
+			color: #222;
+			line-height: 1.6;
+		}
+
+		/* HEADER */
 		.header {
+			position: fixed;
+			top: 0;
+			width: 100%;
 			display: flex;
 			justify-content: space-between;
-			text-align: left;
-			padding: 20px 50px;
-			background-color: #333;
-			color: white;
+			align-items: center;
+			padding: 15px 60px;
+			background: linear-gradient(135deg, #3f51b5, #5a55ae);
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+			z-index: 999;
 		}
 
-		/* Make the h2 clickable, already underlined and styled */
-		.header a {
-			text-decoration: none;  /* Remove default link underline */
-			color: white;  /* Ensure the link is white like the text */
+		.header h1 a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 1.8rem;
+			font-weight: 600;
 		}
 
-		.header h2 {
-			margin: 0;
-			font-size: 1.4em;
-			cursor: pointer; /* Make it appear clickable */
-			text-decoration: underline; /* Keep underline style for visibility */
-		}
-
-		.header h3 {
-			margin: 0;
-			font-size: 1.4em;
-			cursor: pointer; /* Make it appear clickable */
-			color: white;
-		}
-
+		/* NAV BUTTONS */
 		.nav-buttons {
 			display: flex;
 			gap: 15px;
 		}
 		.nav-buttons a {
-			color: white;
+			color: #fff;
 			text-decoration: none;
-			padding: 10px 20px;
-			border: 1px solid white;
-			border-radius: 5px;
-			transition: background-color 0.3s ease-in-out;
+			border: 2px solid transparent;
+			padding: 8px 15px;
+			border-radius: 6px;
+			font-weight: 400;
+			transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 		}
 		.nav-buttons a:hover {
-			background-color: #555;
+			border-color: #fff;
+			background-color: rgba(255, 255, 255, 0.15);
 		}
 
-		/* Main content (central column) */
+		/* MAIN CONTENT CONTAINER */
 		.main-content {
-			width: 70%; /* Central column */
-			max-width: 500px;
-			margin: 40px auto;
-			padding: 20px;
-			text-align: right; /* Align text to the right within the central column */
-		}
-		.main-content h1 {
-			font-size: 2.5em;
-			margin-bottom: 20px;
-			color: #222;
-		}
-		.main-content p {
-			font-size: 1.2em;
-			line-height: 1.8;
+			width: 90%;
+			max-width: 700px;
+			margin: 120px auto 50px; /* space for the fixed header */
+			text-align: center;
 		}
 
-		/* Section styling */
+		/* INTRO SECTION */
+		.intro {
+			text-align: left;
+			background-color: #fff;
+			border-radius: 10px;
+			padding: 25px;
+			margin-bottom: 40px;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+			border-left: 4px solid #3f51b5;
+		}
+
+		.intro p {
+			font-size: 1.1rem;
+			margin: 0;
+		}
+
+		/* GENERAL SECTION (CARD) */
 		.section {
-			margin: 50px 0;
-			text-align: left; /* Align text to the right for each section */
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+			padding: 20px 25px;
+			margin-bottom: 30px;
+			text-align: left;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
 		}
-		.section-title {
-			font-size: 1.3em;
-			color: #333;
-			margin-bottom: 20px;
-			text-decoration: underline;
-		}
-		.section p {
-			font-size: 1.1em;
-			line-height: 1.6;
-		}
-		ul li {
-			font-size: 1.1em;
-			padding: 5px 0px;
-
+		.section:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 		}
 
-		/* Responsive design adjustments */
+		.section h2 {
+			font-size: 1.4rem;
+			color: #3f51b5;
+			margin-bottom: 15px;
+			border-bottom: 2px solid #e5e5e5;
+			padding-bottom: 8px;
+		}
+		.section ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.section ul li {
+			margin: 10px 0;
+			font-size: 1rem;
+			display: flex;
+			align-items: flex-start;
+			gap: 8px;
+		}
+		.section ul li::before {
+			content: "•";
+			color: #3f51b5;
+			font-size: 1.5rem;
+			display: inline-block;
+			width: 1.2em;
+			text-align: center;
+			flex-shrink: 0;
+			margin-top: -2px;
+		}
+
+		/* RESPONSIVE */
 		@media (max-width: 768px) {
-			.main-content, .section {
-				width: 50%; /* Make the column take more width on smaller screens */
+			.header {
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 15px 30px;
 			}
 			.nav-buttons {
-				flex-direction: column;
+				margin-top: 10px;
+			}
+			.header h1 a {
+				font-size: 1.5rem;
+			}
+			.main-content {
+				margin: 100px auto 50px;
 			}
 		}
 	</style>
 </head>
 <body>
 
-<!-- Header with navigation -->
+<!-- Header -->
 <div class="header">
-	<h3> Elie Salem </h3>
+	<h1>
+		<a href="#">Elie Salem</a>
+	</h1>
 	<div class="nav-buttons">
 		<a href="resume.html">Resume</a>
 		<a href="projects.html">Projects</a>
 	</div>
 </div>
+
+<!-- Main Content -->
 <div class="main-content">
-<!-- Main content in a centered column -->
-<div class="section">
-	<p>Hey! I'm Elie, a senior at Harvard studying Computer Science and Philosophy.</p>
+
+	<!-- Intro -->
+	<div class="intro">
+		<p>
+			I'm Elie! I'm a Harvard senior studying
+			<strong>Computer Science &amp; Philosophy.</strong>
+			I like writing, coding, and occasionally pretending I understand weighty things.
+		</p>
+	</div>
+
+	<!-- About Me -->
+	<div class="section">
+		<h2>About Me</h2>
+		<ul>
+			<li>Grew up between Lebanon and the U.S.</li>
+			<li>Debate champion in three states.</li>
+			<li>Lived three months in the Amazon.</li>
+			<li>Classical pianist with pre-professional training.</li>
+		</ul>
+	</div>
+
+	<!-- Coding -->
+	<div class="section">
+		<h2>Tech Work</h2>
+		<ul>
+			<li>Worked full-stack at Keel Ventures, building AI-powered startup research tools.</li>
+			<li>Developed and marketed digital learning products for Harvard.</li>
+			<li>Leading a team building an AI-driven email chatbot startup.</li>
+		</ul>
+	</div>
+
+	<!-- Writing & School -->
+	<div class="section">
+		<h2>Writing &amp; School</h2>
+		<ul>
+			<li>Editor-in-Chief of The Harvard Lampoon, the world's most famous college humor magazine.</li>
+			<li>Wrote a book draft that made it to the final round at Back Bay Books.</li>
+			<li>Wrote my thesis with Harvard’s Philosophy Department Head.</li>
+		</ul>
+	</div>
 </div>
 
-<!-- About Me Section -->
-<div class="section">
-	<h2 class="section-title">About Me</h2>
-	<ul>
-		<li>grew up in Lebanon and the USA.</li>
-		<li>debate champion in three states.</li>
-		<li>lived three months in the Amazon.</li>
-		<li>pre-professional proficiency classical pianist.</li>
-	</ul>
-</div>
-
-<!-- Coding Section -->
-<div class="section">
-	<h2 class="section-title">Coding</h2>
-	<ul>
-		<li>worked full stack at Keel Ventures.</li>
-		<li>created and marketed digital learning products for Harvard.</li>
-		<li>leading a team to create an email chatbot startup.</li>
-	</ul>
-</div>
-
-<!-- School Section -->
-<div class="section">
-	<h2 class="section-title">School</h2>
-	<ul>
-		<li>Editor-in-Chief of The Harvard Lampoon, the premier college humor magazine.</li>
-		<li>wrote a comedy book draft that went to the final round at Back Bay Books.</li>
-		<li>wrote my thesis with Harvard Philosophy Department Head.</li>
-	</ul>
-</div>
-
-
-
-</div>
 </body>
 </html>

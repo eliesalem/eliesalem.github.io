@@ -1,112 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Projects</title>
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+            rel="stylesheet"
+    />
     <style>
-        /* General body and layout setup */
-        body {
-            font-family: 'EB Garamond', serif;
+        /* RESET */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #ffffff;
-            color: #333;
         }
 
-        /* Header */
+        /* BODY */
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f6f8fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
         .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            text-align: left;
-            padding: 20px 50px;
-            background-color: #333;
-            color: white;
+            align-items: center;
+            padding: 15px 50px;
+            background: linear-gradient(135deg, #3f51b5, #5a55ae);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 999;
         }
 
-        .header a {
-            text-decoration: none; /* Remove default link underline */
-            color: white; /* Ensure the link is white like the text */
+        /* LOGO / NAME */
+        .header .logo {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.5rem;
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        .header h2 {
-            margin: 0;
-            font-size: 1.4em;
-            cursor: pointer; /* Make it appear clickable */
-            text-decoration: underline; /* Keep underline style for visibility */
-        }
-
+        /* NAVIGATION */
         .nav-buttons {
             display: flex;
             gap: 15px;
         }
-
         .nav-buttons a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            padding: 10px 20px;
-            border: 1px solid white;
+            font-weight: 400;
+            padding: 8px 16px;
+            border: 2px solid transparent;
             border-radius: 5px;
-            transition: background-color 0.3s ease-in-out;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
-
         .nav-buttons a:hover {
-            background-color: #555;
+            border-color: #fff;
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
-        /* Main content (central column) */
+        /* MAIN CONTAINER */
         .container {
-            width: 100%;
-            max-width: 800px;
+            max-width: 1100px;
+            margin: 100px auto 50px; /* top margin to offset fixed header */
             padding: 20px;
-            margin-top: 80px; /* Adjust to create space for the header */
         }
 
+        /* SECTION (PROJECT CARDS) */
         .section {
-            padding: 45px 20px;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 20px;
-            font-family: Arial, sans-serif;
-            box-sizing: border-box;
             background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* Indicate card is clickable */
+        }
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .section:last-child {
-            border-bottom: none;
+        /* SECTION HEADING */
+        .section h2 {
+            font-size: 1.25rem;
+            color: #3f51b5;
+            margin-bottom: 10px;
         }
 
-        h2 {
-            margin-bottom: 15px;
-            cursor: pointer;
-            color: #007BFF;
-            font-size: 24px;
-        }
-
-        h2:hover {
-            text-decoration: underline;
-        }
-        .header h3 {
-            margin: 0;
-            font-size: 1.4em;
-            cursor: pointer; /* Make it appear clickable */
-            color: white;
-        }
-
-
-        p {
-            font-size: 16px;
+        /* SECTION PARAGRAPH */
+        .section p {
+            font-size: 0.95rem;
+            color: #555;
             line-height: 1.5;
-            color: #333;
+        }
+
+        /* Make sure text doesn't get too large on small devices */
+        @media (max-width: 600px) {
+            .header {
+                padding: 10px 20px;
+            }
+            .header .logo {
+                font-size: 1.2rem;
+            }
+            .nav-buttons a {
+                padding: 6px 12px;
+            }
+            .section h2 {
+                font-size: 1.1rem;
+            }
+            .section p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
 <!-- Header with navigation -->
 <div class="header">
-    <a href="index.html">
-        <h3> Elie Salem </h3>
-    </a>
+    <a class="logo" href="index.html">Elie Salem</a>
     <div class="nav-buttons">
         <a href="resume.html">Resume</a>
         <a href="projects.html">Projects</a>
@@ -114,26 +136,43 @@
 </div>
 
 <div class="container">
-    <!-- Project Sections -->
-    <div class="section">
-        <div class="content">
-            <h2 onclick="window.location.href='https://github.com/eliesalem/flight-query-app'">Flight Query</h2>
-            <p>Parses natural language queries into structured database queries using a grammar-based parser. Due to the size of the database, you will have to run it locally. Type "python app.py" in the terminal.</p>
-        </div>
+    <!-- Project 1 -->
+    <div
+            class="section"
+            onclick="window.location.href='https://github.com/eliesalem/flight-query-app'"
+    >
+        <h2>Flight Query</h2>
+        <p>
+            Parses natural language queries into structured database queries using a
+            grammar-based parser. Due to the size of the database, you will have to
+            run it locally. Host index.html locally and then type <strong>python app.py
+            </strong> in the terminal.
+        </p>
     </div>
 
-    <div class="section">
-        <div class="content">
-            <h2 onclick="window.location.href='cs109a_project_milestone_5/project.html'">2020 Election Data Analysis</h2>
-            <p>Data analysis using panda. Uses lasso, principal component analysis, and random forest to determine predictive features of a county's voting results.</p>
-        </div>
+    <!-- Project 2 -->
+    <div
+            class="section"
+            onclick="window.location.href='cs109a_project_milestone_5/project.html'"
+    >
+        <h2>2020 Election Data Analysis</h2>
+        <p>
+            Data analysis using pandas. Uses lasso, principal component analysis,
+            and random forest to determine predictive features of a county's voting
+            results.
+        </p>
     </div>
 
-    <div class="section">
-        <div class="content">
-            <h2 onclick="window.location.href='https://eliesalem.github.io/'">Wildlife Trading Website</h2>
-            <p>Website includes parallax scrolling, complex matching game, and dynamic data analysis with map tools.</p>
-        </div>
+    <!-- Project 3 -->
+    <div
+            class="section"
+            onclick="window.location.href='https://eliesalem.github.io/'"
+    >
+        <h2>Wildlife Trading Website</h2>
+        <p>
+            This website features parallax scrolling, a custom matching game, and
+            dynamic data visualizations with map tools. Make sure to view in fullscreen.
+        </p>
     </div>
 </div>
 </body>
